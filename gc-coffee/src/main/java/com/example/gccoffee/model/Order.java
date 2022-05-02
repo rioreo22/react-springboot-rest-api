@@ -1,12 +1,14 @@
 package com.example.gccoffee.model;
 
 import lombok.Getter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
 @Getter
+@ToString
 public class Order {
     private final UUID orderId;
     private final Email email;
@@ -20,11 +22,11 @@ public class Order {
     public Order(UUID orderId, Email email, String address, String postcode, List<OrderItem> orderItems, OrderStatus orderStatus, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.orderId = orderId;
         this.email = email;
+        this.orderItems = orderItems;
+        this.createdAt = createdAt;
+        this.orderStatus = orderStatus;
         this.address = address;
         this.postcode = postcode;
-        this.orderItems = orderItems;
-        this.orderStatus = orderStatus;
-        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 

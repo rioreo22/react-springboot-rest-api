@@ -18,7 +18,6 @@ public class Email {
         Assert.isTrue(address.length() >= 4 && address.length() <= 50, "address length must be between 4 and 50 characters");
         Assert.isTrue(checkAddress(address), "Invalid email address");
         this.address = address;
-
     }
 
     private static boolean checkAddress(String address) {
